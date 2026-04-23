@@ -4,10 +4,11 @@
 
 @layer base {
   :root {
-    --ink: #0A1F2B;
-    --paper: #F6F1E8;
-    --sun: #E8892E;
-    --sea: #2A6B8F;
+    --ink: #0B2138;
+    --paper: #FAFAF6;
+    --accent: #1D6FE8;
+    --accent-deep: #0A3F8C;
+    --accent-pale: #D5E6FB;
   }
 
   html {
@@ -17,25 +18,30 @@
   }
 
   body {
-    background: var(--paper);
     color: var(--ink);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-feature-settings: "ss01", "cv11";
+    /* Layered off-white: paper base + very subtle noise relief */
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(ellipse at top, rgba(29, 111, 232, 0.04) 0%, transparent 55%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.043  0 0 0 0 0.129  0 0 0 0 0.22  0 0 0 0.04 0'/></filter><rect width='280' height='280' filter='url(%23n)'/></svg>");
+    background-attachment: fixed;
   }
 
   ::selection {
-    background: var(--sun);
-    color: var(--ink);
+    background: var(--accent);
+    color: white;
   }
 
-  /* Editorial figure-number for section headers */
+  /* Eyebrow dot */
   .sec-num::before {
     content: '';
     display: inline-block;
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 9999px;
-    background: var(--sun);
+    background: var(--accent);
     margin-right: 0.75rem;
     transform: translateY(-0.1em);
   }
@@ -43,15 +49,15 @@
 
 @layer components {
   .hairline {
-    border-color: rgba(10, 31, 43, 0.12);
+    border-color: rgba(11, 33, 56, 0.1);
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-ink text-paper px-7 py-4 font-medium tracking-tight text-sm uppercase transition-all hover:bg-sun hover:text-ink;
+    @apply inline-flex items-center justify-center gap-2 bg-ink text-paper px-7 py-4 font-medium tracking-tight text-sm uppercase transition-all hover:bg-sun;
   }
 
   .btn-sun {
-    @apply inline-flex items-center justify-center gap-2 bg-sun text-ink px-7 py-4 font-medium tracking-tight text-sm uppercase transition-all hover:bg-ink hover:text-paper;
+    @apply inline-flex items-center justify-center gap-2 bg-sun text-paper px-7 py-4 font-medium tracking-tight text-sm uppercase transition-all hover:bg-ink;
   }
 
   .btn-ghost {
@@ -66,23 +72,28 @@
     background-size: 100% 1px;
   }
   .link-under:hover {
-    background-image: linear-gradient(var(--sun), var(--sun));
+    background-image: linear-gradient(var(--accent), var(--accent));
     background-size: 100% 2px;
+    color: var(--accent);
   }
 
   .eyebrow {
-    @apply text-xs uppercase tracking-[0.25em] font-medium text-ink/60;
+    @apply text-[11px] uppercase tracking-[0.22em] font-medium text-ink/60;
   }
 
+  /* Display now sans — Archivo, condensed & strong */
   .display {
-    font-family: 'Fraunces', serif;
-    font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 144;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-stretch: 100%;
   }
 
+  /* "Italic accent" — same font, slight italic for flourish */
   .display-italic {
-    font-family: 'Fraunces', serif;
+    font-family: 'Archivo', sans-serif;
     font-style: italic;
-    font-variation-settings: "SOFT" 80, "WONK" 1, "opsz" 144;
+    font-weight: 500;
+    font-stretch: 100%;
   }
 
   .grain {
@@ -93,7 +104,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.04;
+    opacity: 0.06;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
   }
@@ -116,23 +127,18 @@
     to { transform: translateX(-100%); }
   }
 
-  /* Sun icon */
-  .sun-icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    background: var(--sun);
-    border-radius: 9999px;
-    vertical-align: -0.1em;
-  }
-
-  /* Ticker underline for numbers */
+  /* KPI number style — strong sans, tightly tracked */
   .kpi-num {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-variation-settings: "opsz" 144;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 500;
     letter-spacing: -0.04em;
     line-height: 0.9;
+  }
+
+  /* Soft card shading used for emphasis tiles */
+  .tile {
+    background: white;
+    border: 1px solid rgba(11, 33, 56, 0.08);
   }
 }
 
@@ -140,11 +146,11 @@
 @media (min-width: 768px) {
   ::-webkit-scrollbar { width: 10px; height: 10px; }
   ::-webkit-scrollbar-track { background: var(--paper); }
-  ::-webkit-scrollbar-thumb { background: rgba(10, 31, 43, 0.2); }
+  ::-webkit-scrollbar-thumb { background: rgba(11, 33, 56, 0.2); }
   ::-webkit-scrollbar-thumb:hover { background: var(--ink); }
 }
 
-/* SL-specific style for /solutionslab page */
+/* SL-specific style — keep /solutionslab page on Solutions Lab brand (yellow/black). */
 .sl-bg {
   background: #0B0B0B;
   color: #F5F5F5;

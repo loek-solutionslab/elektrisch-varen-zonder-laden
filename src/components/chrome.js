@@ -18,7 +18,8 @@ export function renderAnnouncement() {
 export function renderHeader(active = '') {
   const navItems = [
     { href: '/', label: 'Home', match: 'home' },
-    { href: '/onze-boten/', label: 'Onze sloepen', match: 'boten' },
+    { href: '/onze-boten/', label: 'Nieuwe sloepen', match: 'boten' },
+    { href: '/ombouw/', label: 'Ombouw', match: 'ombouw' },
     { href: '/technologie/', label: 'Technologie', match: 'tech' },
     { href: '/nieuws/', label: 'Nieuws', match: 'nieuws' },
     { href: '/contact/', label: 'Contact', match: 'contact' },
@@ -90,6 +91,7 @@ export function renderFooter() {
         </div>
         <div>
           <div class="eyebrow text-paper/40 mb-4">Bedrijf</div>
+          <a href="/ombouw/" class="block text-paper/70 hover:text-sun py-1 text-sm">Ombouw service</a>
           <a href="/technologie/" class="block text-paper/70 hover:text-sun py-1 text-sm">Technologie</a>
           <a href="/nieuws/" class="block text-paper/70 hover:text-sun py-1 text-sm">Nieuws</a>
           <a href="/contact/" class="block text-paper/70 hover:text-sun py-1 text-sm">Contact</a>

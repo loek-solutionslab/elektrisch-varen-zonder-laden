@@ -14,6 +14,7 @@ const pages = {
   aquat700: 'onze-boten/aquat700tender/index.html',
   dock: 'onze-boten/dock650steel/index.html',
   solara: 'onze-boten/solara450/index.html',
+  ombouw: 'ombouw/index.html',
   technologie: 'technologie/index.html',
   nieuws: 'nieuws/index.html',
   contact: 'contact/index.html',

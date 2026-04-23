@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://static.wixstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600&family=Bricolage+Grotesque:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..700;1,400..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 </head>
 <body data-page="home" class="bg-paper text-ink">
@@ -34,12 +34,28 @@
             Vaar op <span class="display-italic text-sun">de&nbsp;zon</span>.
           </h1>
           <p class="mt-10 max-w-xl text-lg text-ink/75 leading-relaxed">
-            De enige sloep die zichzelf oplaadt. 25 tot 35 uur fluisterstil vaarplezier —
-            zonder tanken, zonder laadpaal, zonder zorgen. Alleen u, het water, en de stilte.
+            De enige sloep die zichzelf oplaadt. 20 tot 30 uur fluisterstil vaarplezier op één lading —
+            drie tot vier dagen varen zonder stopcontact. Koop een nieuwe sloep, of bouw uw eigen boot om.
           </p>
-          <div class="mt-10 flex flex-wrap gap-3">
+
+          <!-- Dual service chooser -->
+          <div class="mt-10 grid sm:grid-cols-2 gap-3 max-w-xl">
+            <a href="/onze-boten/" class="group border border-ink/20 p-5 hover:bg-ink hover:text-paper transition-colors">
+              <div class="text-[10px] uppercase tracking-widest text-ink/50 group-hover:text-paper/50 mb-2">Dienst 01</div>
+              <div class="display text-xl md:text-2xl">Nieuwe sloep kopen</div>
+              <div class="text-sm mt-2 text-ink/60 group-hover:text-paper/70">10 modellen vanaf € 9.900 →</div>
+            </a>
+            <a href="/ombouw/" class="group border border-ink/20 p-5 hover:bg-sun transition-colors relative">
+              <div class="absolute top-3 right-3 text-[9px] uppercase tracking-widest text-sun group-hover:text-ink">● populair</div>
+              <div class="text-[10px] uppercase tracking-widest text-ink/50 mb-2">Dienst 02</div>
+              <div class="display text-xl md:text-2xl">Uw boot ombouwen</div>
+              <div class="text-sm mt-2 text-ink/60 group-hover:text-ink/80">€ 6.000 – € 10.000 →</div>
+            </a>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3">
             <a href="/contact/#proefvaart" class="btn-primary">Plan uw proefvaart</a>
-            <a href="/onze-boten/" class="btn-ghost">Bekijk de 10 sloepen →</a>
+            <a href="tel:+31622199699" class="btn-ghost">Bel +31 622 199 699</a>
           </div>
         </div>
         <div class="md:col-span-5">
@@ -64,7 +80,7 @@
     <div class="marquee">
       <div class="marquee-track">
         <span class="display-italic text-3xl md:text-5xl whitespace-nowrap flex items-center gap-16"><span>Zonnepanelen beloopbaar</span><span class="w-3 h-3 rounded-full bg-sun"></span></span>
-        <span class="display-italic text-3xl md:text-5xl whitespace-nowrap flex items-center gap-16"><span>25–35 uur vaarbereik</span><span class="w-3 h-3 rounded-full bg-sun"></span></span>
+        <span class="display-italic text-3xl md:text-5xl whitespace-nowrap flex items-center gap-16"><span>20–30 uur vaarbereik</span><span class="w-3 h-3 rounded-full bg-sun"></span></span>
         <span class="display-italic text-3xl md:text-5xl whitespace-nowrap flex items-center gap-16"><span>Geen laadpaal nodig</span><span class="w-3 h-3 rounded-full bg-sun"></span></span>
         <span class="display-italic text-3xl md:text-5xl whitespace-nowrap flex items-center gap-16"><span>Fluisterstil</span><span class="w-3 h-3 rounded-full bg-sun"></span></span>
         <span class="display-italic text-3xl md:text-5xl whitespace-nowrap flex items-center gap-16"><span>100% uitstootvrij</span><span class="w-3 h-3 rounded-full bg-sun"></span></span>
@@ -74,7 +90,7 @@
       </div>
       <div class="marquee-track" aria-hidden="true">
         <span class="display-italic text-3xl md:text-5xl whitespace-nowrap flex items-center gap-16"><span>Zonnepanelen beloopbaar</span><span class="w-3 h-3 rounded-full bg-sun"></span></span>
-        <span class="display-italic text-3xl md:text-5xl whitespace-nowrap flex items-center gap-16"><span>25–35 uur vaarbereik</span><span class="w-3 h-3 rounded-full bg-sun"></span></span>
+        <span class="display-italic text-3xl md:text-5xl whitespace-nowrap flex items-center gap-16"><span>20–30 uur vaarbereik</span><span class="w-3 h-3 rounded-full bg-sun"></span></span>
         <span class="display-italic text-3xl md:text-5xl whitespace-nowrap flex items-center gap-16"><span>Geen laadpaal nodig</span><span class="w-3 h-3 rounded-full bg-sun"></span></span>
         <span class="display-italic text-3xl md:text-5xl whitespace-nowrap flex items-center gap-16"><span>Fluisterstil</span><span class="w-3 h-3 rounded-full bg-sun"></span></span>
         <span class="display-italic text-3xl md:text-5xl whitespace-nowrap flex items-center gap-16"><span>100% uitstootvrij</span><span class="w-3 h-3 rounded-full bg-sun"></span></span>
@@ -91,35 +107,82 @@
       <div class="md:col-span-5">
         <div class="eyebrow mb-4"><span class="sec-num"></span>Het getal</div>
         <h2 class="display text-huge">
-          Één week zon<br>
-          = <span class="display-italic text-sun">tientallen&nbsp;uren</span><br>
-          vaarplezier.
+          20 kWh = <span class="display-italic text-sun">3 tot 4<br>dagen</span> varen<br>zonder laden.
         </h2>
       </div>
       <div class="md:col-span-7">
         <p class="text-lg text-ink/75 leading-relaxed max-w-xl">
-          Onze sloepen worden standaard geleverd met een ruim accupakket én beloopbare zonnepanelen.
-          De panelen laden de accu's op tijdens het varen, maar vooral als u er niet bent.
-          Het resultaat: u komt thuis, de boot staat op vol. Volgende keer: weer varen.
+          Onze sloepen worden standaard geleverd met een 20 kWh lithium accupakket — dezelfde techniek
+          die in elektrische auto's zit, van betrouwbare leveranciers. Ruim voldoende voor 20 tot 30 uur varen,
+          oftewel drie tot vier dagen vaarplezier op één lading. En altijd een walstroomlader als backup.
         </p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
           <div class="border-t border-ink/20 pt-4">
-            <div class="kpi-num text-6xl md:text-7xl">25<span class="text-sun">–</span>35</div>
+            <div class="kpi-num text-6xl md:text-7xl">20<span class="text-sun text-4xl md:text-5xl"> kWh</span></div>
+            <div class="text-xs uppercase tracking-widest text-ink/55 mt-3">standaard accu</div>
+          </div>
+          <div class="border-t border-ink/20 pt-4">
+            <div class="kpi-num text-6xl md:text-7xl">20<span class="text-sun">–</span>30</div>
             <div class="text-xs uppercase tracking-widest text-ink/55 mt-3">uur per lading</div>
           </div>
           <div class="border-t border-ink/20 pt-4">
-            <div class="kpi-num text-6xl md:text-7xl">0</div>
-            <div class="text-xs uppercase tracking-widest text-ink/55 mt-3">laadpalen nodig</div>
+            <div class="kpi-num text-6xl md:text-7xl">3<span class="text-sun">–</span>4</div>
+            <div class="text-xs uppercase tracking-widest text-ink/55 mt-3">dagen varen</div>
           </div>
           <div class="border-t border-ink/20 pt-4">
-            <div class="kpi-num text-6xl md:text-7xl">15<span class="text-sun">kW</span></div>
-            <div class="text-xs uppercase tracking-widest text-ink/55 mt-3">tot 35 pk equivalent</div>
-          </div>
-          <div class="border-t border-ink/20 pt-4">
-            <div class="kpi-num text-6xl md:text-7xl">10</div>
-            <div class="text-xs uppercase tracking-widest text-ink/55 mt-3">sloepen op voorraad</div>
+            <div class="kpi-num text-6xl md:text-7xl">1<span class="text-sun text-4xl md:text-5xl"> wal</span></div>
+            <div class="text-xs uppercase tracking-widest text-ink/55 mt-3">lader als backup</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO SERVICES -->
+  <section class="bg-paper-warm border-y hairline">
+    <div class="max-w-[1500px] mx-auto px-5 md:px-10 py-20 md:py-28">
+      <div class="eyebrow mb-4"><span class="sec-num"></span>Twee diensten</div>
+      <h2 class="display text-huge mb-14">Nieuwe sloep. <span class="display-italic text-sun">Of</span> ombouw<br>van uw eigen&nbsp;boot.</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/onze-boten/" class="group bg-paper p-8 md:p-12 relative overflow-hidden block hover:bg-ink hover:text-paper transition-colors">
+          <div class="flex items-start justify-between mb-8">
+            <span class="kpi-num text-7xl md:text-8xl text-sun">01</span>
+            <span class="eyebrow">● 10 modellen</span>
+          </div>
+          <h3 class="display text-big">Koop een<br>nieuwe <span class="display-italic">sloep</span>.</h3>
+          <p class="mt-6 text-ink/75 group-hover:text-paper/75 leading-relaxed max-w-md">
+            Kant-en-klaar. Solara 450 tot Aqua T700 Tender. Kies op formaat, vaargebied, accu-pakket,
+            kleur en bekleding. Elke sloep standaard uitgerust met beloopbare zonnepanelen, 20 kWh accu en elektromotor.
+          </p>
+          <div class="mt-8 flex items-baseline justify-between">
+            <div>
+              <div class="text-[10px] uppercase tracking-widest text-ink/50 group-hover:text-paper/50">vanaf</div>
+              <div class="kpi-num text-3xl md:text-4xl">€&nbsp;9.900</div>
+            </div>
+            <div class="text-sm font-medium">Bekijk de 10 sloepen →</div>
+          </div>
+        </a>
+
+        <a href="/ombouw/" class="group bg-paper p-8 md:p-12 relative overflow-hidden block hover:bg-sun transition-colors">
+          <div class="flex items-start justify-between mb-8">
+            <span class="kpi-num text-7xl md:text-8xl text-sun group-hover:text-ink">02</span>
+            <span class="eyebrow group-hover:text-ink">● populair</span>
+          </div>
+          <h3 class="display text-big">Bouw uw eigen<br>boot <span class="display-italic">om</span>.</h3>
+          <p class="mt-6 text-ink/75 group-hover:text-ink/85 leading-relaxed max-w-md">
+            Nieuwe motor, zonnepanelen, 20 kWh accu en walstroomlader in uw bestaande sloep.
+            Meestal binnen 2–4 weken klaar. Inclusief installatie en proefvaart.
+            Behoud uw boot — krijg de techniek van nu.
+          </p>
+          <div class="mt-8 flex items-baseline justify-between">
+            <div>
+              <div class="text-[10px] uppercase tracking-widest text-ink/50">vanaf</div>
+              <div class="kpi-num text-3xl md:text-4xl">€&nbsp;6.000 – € 10.000</div>
+            </div>
+            <div class="text-sm font-medium">Ontdek ombouw →</div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -333,7 +396,7 @@
             <span class="display text-xl md:text-2xl flex-1">Wat is het vaarbereik?</span>
             <span class="text-2xl text-ink/40 group-open:rotate-45 transition-transform">+</span>
           </summary>
-          <div class="mt-5 pl-10 text-ink/70 leading-relaxed max-w-2xl">Omdat we standaard grote accupakketten leveren, vaart u 25 tot 35 uur op één lading bij kruissnelheid (ca. 7–8 km/u). Bij verschillende boten is het pakket uit te breiden tot 40 of 60 kWh — vaarbereik van honderden kilometers.</div>
+          <div class="mt-5 pl-10 text-ink/70 leading-relaxed max-w-2xl">Standaard leveren we een 20 kWh lithium accupakket — ruim voldoende voor 20 tot 30 uur varen op één lading (ca. 7–8 km/u kruissnelheid). Dat staat gelijk aan drie tot vier dagen vaarplezier. Bij grotere sloepen is het pakket uit te breiden tot 40 of 60 kWh. En altijd met een walstroomlader als backup.</div>
         </details>
         <details class="group border-b border-ink/15 py-6 cursor-pointer">
           <summary class="flex items-baseline gap-6 list-none">
@@ -381,7 +444,7 @@
             <span class="display text-xl md:text-2xl flex-1">Kan mijn bestaande boot ook worden omgebouwd?</span>
             <span class="text-2xl text-ink/40 group-open:rotate-45 transition-transform">+</span>
           </summary>
-          <div class="mt-5 pl-10 text-ink/70 leading-relaxed max-w-2xl">Ja. Zowel nieuwe sloepen als bestaande boten bouwen we om naar zonne-aandrijving. Vraag naar de mogelijkheden — wij bekijken per boot wat er nodig is.</div>
+          <div class="mt-5 pl-10 text-ink/70 leading-relaxed max-w-2xl">Ja. Dat is onze tweede dienst. Een complete ombouw — beloopbare zonnepanelen, 20 kWh lithium accu, elektromotor en walstroomlader — kost tussen de € 6.000 en € 10.000 afhankelijk van uw sloep. Bekijk de <a href="/ombouw/" class="link-under font-medium">ombouw-pagina</a> voor het volledige traject en vraag een offerte aan.</div>
         </details>
       </div>
     </div>
