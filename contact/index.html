@@ -92,11 +92,30 @@
         <div>
           <label class="text-xs uppercase tracking-widest text-ink/60 mb-3 block">Waar bent u in geïnteresseerd?</label>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
-            ${['Proefvaart','Nieuwe sloep','Ombouw eigen boot','Persoonlijk advies','Vergelijkingsgids','Offerte'].map(o => `
-              <label class="flex items-center gap-2 border border-ink/30 px-4 py-3 cursor-pointer hover:bg-sun hover:border-sun transition-colors">
-                <input type="checkbox" name="interesse" value="${o}" class="accent-sun">
-                <span>${o}</span>
-              </label>`).join('')}
+            <label class="flex items-center gap-2 border border-ink/30 px-4 py-3 cursor-pointer hover:bg-sun hover:border-sun transition-colors">
+              <input type="checkbox" name="interesse" value="Proefvaart" class="accent-sun">
+              <span>Proefvaart</span>
+            </label>
+            <label class="flex items-center gap-2 border border-ink/30 px-4 py-3 cursor-pointer hover:bg-sun hover:border-sun transition-colors">
+              <input type="checkbox" name="interesse" value="Nieuwe sloep" class="accent-sun">
+              <span>Nieuwe sloep</span>
+            </label>
+            <label class="flex items-center gap-2 border border-ink/30 px-4 py-3 cursor-pointer hover:bg-sun hover:border-sun transition-colors">
+              <input type="checkbox" name="interesse" value="Ombouw eigen boot" class="accent-sun">
+              <span>Ombouw eigen boot</span>
+            </label>
+            <label class="flex items-center gap-2 border border-ink/30 px-4 py-3 cursor-pointer hover:bg-sun hover:border-sun transition-colors">
+              <input type="checkbox" name="interesse" value="Persoonlijk advies" class="accent-sun">
+              <span>Persoonlijk advies</span>
+            </label>
+            <label class="flex items-center gap-2 border border-ink/30 px-4 py-3 cursor-pointer hover:bg-sun hover:border-sun transition-colors">
+              <input type="checkbox" name="interesse" value="Vergelijkingsgids" class="accent-sun">
+              <span>Vergelijkingsgids</span>
+            </label>
+            <label class="flex items-center gap-2 border border-ink/30 px-4 py-3 cursor-pointer hover:bg-sun hover:border-sun transition-colors">
+              <input type="checkbox" name="interesse" value="Offerte" class="accent-sun">
+              <span>Offerte</span>
+            </label>
           </div>
         </div>
         <div>

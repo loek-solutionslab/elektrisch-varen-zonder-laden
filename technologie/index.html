@@ -143,21 +143,46 @@
           <h2 class="display text-huge">Onderhoud,<br>regelgeving,<br><span class="display-italic text-sun">vaarbereik</span>.</h2>
         </div>
         <div class="md:col-span-8 space-y-4">
-          ${[
-            {q:'Wat zijn de onderhoudskosten?', a:'Zeer gunstig. Minder bewegende onderdelen, geen motorolie, geen brandstoffilters. De onderhoudskosten liggen fors onder die van een benzine- of dieselmotor.'},
-            {q:'Heb ik een vaarbewijs nodig?', a:'Niet zolang de sloep onder 20 km/u blijft en korter is dan 15 meter — dan geldt in Nederland geen vaarbewijsplicht. Controleer altijd de actuele regelgeving, die kan lokaal verschillen.'},
-            {q:'Mag ik overal varen?', a:'Juist ja — elektrische sloepen zijn vaak welkom in gebieden waar brandstofmotoren verboden zijn vanwege geluid en uitstoot. Denk aan Amsterdam, Utrecht, Leiden en veel natuurgebieden. Lokale regels verschillen.'},
-            {q:'Wat als de zon echt niet schijnt?', a:'Dan teert u in op de enorme buffer van het accupakket. Omdat u op een halfvolle accu al tientallen uren vaart, merkt u dat in de praktijk zelden. Voor intensief gebruik plaatsen we optioneel een walstroom-snellader.'},
-            {q:'Kan mijn bestaande sloep worden omgebouwd?', a:'Ja. Zowel nieuwe als bestaande sloepen bouwen we om naar zonne-aandrijving. We bekijken per boot wat nodig is en zorgen voor een volledige installatie.'},
-          ].map((f,i) => `
           <details class="group bg-paper py-5 px-6 cursor-pointer">
             <summary class="flex items-start gap-6 list-none">
-              <span class="kpi-num text-sun">${String(i+1).padStart(2,'0')}</span>
-              <span class="display text-xl flex-1">${f.q}</span>
+              <span class="kpi-num text-sun">01</span>
+              <span class="display text-xl flex-1">Wat zijn de onderhoudskosten?</span>
               <span class="text-2xl text-ink/40 group-open:rotate-45 transition-transform">+</span>
             </summary>
-            <div class="mt-4 pl-10 text-ink/70 leading-relaxed">${f.a}</div>
-          </details>`).join('')}
+            <div class="mt-4 pl-10 text-ink/70 leading-relaxed">Zeer gunstig. Minder bewegende onderdelen, geen motorolie, geen brandstoffilters. De onderhoudskosten liggen fors onder die van een benzine- of dieselmotor.</div>
+          </details>
+          <details class="group bg-paper py-5 px-6 cursor-pointer">
+            <summary class="flex items-start gap-6 list-none">
+              <span class="kpi-num text-sun">02</span>
+              <span class="display text-xl flex-1">Heb ik een vaarbewijs nodig?</span>
+              <span class="text-2xl text-ink/40 group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="mt-4 pl-10 text-ink/70 leading-relaxed">Niet zolang de sloep onder 20 km/u blijft en korter is dan 15 meter — dan geldt in Nederland geen vaarbewijsplicht. Controleer altijd de actuele regelgeving, die kan lokaal verschillen.</div>
+          </details>
+          <details class="group bg-paper py-5 px-6 cursor-pointer">
+            <summary class="flex items-start gap-6 list-none">
+              <span class="kpi-num text-sun">03</span>
+              <span class="display text-xl flex-1">Mag ik overal varen?</span>
+              <span class="text-2xl text-ink/40 group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="mt-4 pl-10 text-ink/70 leading-relaxed">Juist ja — elektrische sloepen zijn vaak welkom in gebieden waar brandstofmotoren verboden zijn vanwege geluid en uitstoot. Denk aan Amsterdam, Utrecht, Leiden en veel natuurgebieden. Lokale regels verschillen.</div>
+          </details>
+          <details class="group bg-paper py-5 px-6 cursor-pointer">
+            <summary class="flex items-start gap-6 list-none">
+              <span class="kpi-num text-sun">04</span>
+              <span class="display text-xl flex-1">Wat als de zon echt niet schijnt?</span>
+              <span class="text-2xl text-ink/40 group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="mt-4 pl-10 text-ink/70 leading-relaxed">Dan teert u in op de enorme buffer van het accupakket. Omdat u op een halfvolle accu al tientallen uren vaart, merkt u dat in de praktijk zelden. Voor intensief gebruik plaatsen we optioneel een walstroom-snellader.</div>
+          </details>
+          <details class="group bg-paper py-5 px-6 cursor-pointer">
+            <summary class="flex items-start gap-6 list-none">
+              <span class="kpi-num text-sun">05</span>
+              <span class="display text-xl flex-1">Kan mijn bestaande sloep worden omgebouwd?</span>
+              <span class="text-2xl text-ink/40 group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="mt-4 pl-10 text-ink/70 leading-relaxed">Ja. Zowel nieuwe als bestaande sloepen bouwen we om naar zonne-aandrijving. We bekijken per boot wat nodig is en zorgen voor een volledige installatie.</div>
+          </details>
         </div>
       </div>
     </div>
