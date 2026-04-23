@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/inject-framed.mjs",
+    "build": "vite build && node scripts/inject-framed.mjs && cp serve.json dist/serve.json",
     "preview": "vite preview --host 0.0.0.0 --port ${PORT:-4173}",
-    "start": "serve dist -l ${PORT:-4173} -s"
+    "start": "serve dist -l ${PORT:-4173}"
   },
   "dependencies": {
     "serve": "^14.2.6"
