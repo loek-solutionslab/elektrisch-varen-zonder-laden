@@ -1,0 +1,21 @@
+{
+  "name": "elektrisch-varen-zonder-laden",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/inject-framed.mjs",
+    "preview": "vite preview --host 0.0.0.0 --port ${PORT:-4173}",
+    "start": "serve dist -l ${PORT:-4173} -s"
+  },
+  "dependencies": {
+    "serve": "^14.2.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
+    "vite": "^5.3.1"
+  }
+}

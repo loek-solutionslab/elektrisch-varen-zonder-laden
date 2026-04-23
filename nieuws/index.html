@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/af5e69_54979cdb1ba34c1b9b07a483176a68f1~mv2.png/v1/fill/w_64,h_64,al_c,q_85,enc_avif,quality_auto/battery%20cell%20logo_edited.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nieuws — Elektrisch Varen Zonder Laden</title>
+  <meta name="description" content="Nieuws en updates rondom elektrisch varen op zonne-energie: nieuwe modellen, events, en tips voor duurzaam vaarplezier.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600&family=Bricolage+Grotesque:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body data-page="nieuws" class="bg-paper text-ink">
+
+<div id="announcement"></div>
+<div id="site-header"></div>
+
+<main>
+  <section class="max-w-[1500px] mx-auto px-5 md:px-10 pt-10 md:pt-20 pb-16">
+    <div class="grid md:grid-cols-12 gap-10 items-end">
+      <div class="md:col-span-8">
+        <div class="eyebrow mb-6"><span class="sec-num"></span>Nieuws</div>
+        <h1 class="display text-mega">Wat er<br>op ons<br><span class="display-italic text-sun">water</span> gebeurt.</h1>
+      </div>
+      <div class="md:col-span-4">
+        <p class="text-lg text-ink/75">Updates over nieuwe modellen, technische doorontwikkelingen en de ervaringen van klanten op Nederlandse wateren.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-[1500px] mx-auto px-5 md:px-10 pb-20">
+    <div class="grid md:grid-cols-3 gap-10">
+      <article class="md:col-span-3 grid md:grid-cols-2 gap-10 items-center pb-16 border-b hairline">
+        <div class="aspect-[4/3] overflow-hidden bg-paper-warm">
+          <img src="https://static.wixstatic.com/media/af5e69_f3055a2094854e3da629f6e70c6070f0~mv2.jpg/v1/fill/w_1200,h_900,al_c,q_85,enc_avif,quality_auto/file.jpeg" alt="Zonnepanelen op sloep" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <div class="eyebrow mb-3">● Uitgelicht · April 2026</div>
+          <h2 class="display text-big">Nieuwe <span class="display-italic text-sun">Solara 450</span> lineup: nu vanaf € 9.900.</h2>
+          <p class="mt-5 text-ink/70 leading-relaxed">
+            Onze instap-sloep krijgt een nieuw, slanker profiel én drie accu-configuraties (2.5, 5, 7.5 kWh). Voor wie zijn eerste stappen zet in elektrisch varen op zonne-energie, nu toegankelijker dan ooit.
+          </p>
+          <a href="/onze-boten/solara450/" class="inline-block mt-6 link-under text-sm">Lees meer over de Solara →</a>
+        </div>
+      </article>
+
+      ${[
+        {tag:'Nieuw model', date:'Maart 2026', title:'DOCK 650 Steel: 1000 Wp aan zonnepanelen', body:'Ons slagschip krijgt de grootste paneel-configuratie van de vloot. Ideaal voor meerdaagse tochten waarbij u nooit hoeft te stoppen om bij te laden.', href:'/onze-boten/dock650steel/'},
+        {tag:'Technologie', date:'Februari 2026', title:'Waarom een buffer-accu slimmer is dan snelladen', body:'Elektrisch varen hoeft geen stress om laadpalen te zijn. Onze filosofie: een forse accu laadt rustig bij op zonne-energie, u vaart zonder na te denken over stroom.', href:'/technologie/'},
+        {tag:'Klantverhaal', date:'Januari 2026', title:'Coastliner 620 — een dag op de Vinkeveense Plassen', body:'Met acht personen, een volle koelbox en de zon op het dek. 11 uur varen op één lading, en thuis stond de sloep alweer op 40%.', href:'/onze-boten/coastliner620/'},
+        {tag:'Update', date:'December 2025', title:'Winterberging: de zon laadt ook als u niet vaart', body:'Uw boot in winterstalling? Wij laten de panelen gewoon staan. In het voorjaar vindt u een volledig opgeladen accu — klaar voor vaarseizoen één.', href:'/technologie/'},
+        {tag:'Event', date:'November 2025', title:'HISWA 2025: bezoek ons op de beurs', body:'Wij zijn aanwezig op de watersportbeurs met drie modellen op display. Plan uw bezoek, ontvang een rondleiding, ervaar zelf wat "fluisterstil" betekent.', href:'/contact/'},
+      ].map(a => `
+      <article class="border-b hairline pb-10">
+        <div class="flex items-center justify-between text-xs uppercase tracking-widest text-ink/55 mb-4">
+          <span class="text-sun">● ${a.tag}</span>
+          <span>${a.date}</span>
+        </div>
+        <h3 class="display text-2xl md:text-3xl">${a.title}</h3>
+        <p class="mt-4 text-ink/70 leading-relaxed">${a.body}</p>
+        <a href="${a.href}" class="inline-block mt-5 text-sm link-under">Lees meer →</a>
+      </article>`).join('')}
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="max-w-[1500px] mx-auto px-5 md:px-10 pb-10">
+    <div class="bg-ink text-paper p-10 md:p-16 grid md:grid-cols-12 gap-10 items-end">
+      <div class="md:col-span-7">
+        <div class="eyebrow text-paper/50 mb-3"><span class="sec-num"></span>Op de hoogte blijven</div>
+        <h2 class="display text-huge">Één mail<br>per <span class="display-italic text-sun">seizoen</span>.</h2>
+        <p class="mt-5 text-paper/70 max-w-lg">Nieuwe modellen, technische ontwikkelingen, uitnodigingen voor vaartochten — compact, zonder spam.</p>
+      </div>
+      <form class="md:col-span-5 flex flex-col gap-3">
+        <label class="text-xs uppercase tracking-widest text-paper/50">Uw e-mail</label>
+        <div class="flex gap-2">
+          <input type="email" required placeholder="naam@voorbeeld.nl" class="flex-1 bg-transparent border border-paper/30 px-4 py-3 text-paper placeholder:text-paper/40 focus:outline-none focus:border-sun">
+          <button type="submit" class="btn-sun">Inschrijven</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

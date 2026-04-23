@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/af5e69_54979cdb1ba34c1b9b07a483176a68f1~mv2.png/v1/fill/w_64,h_64,al_c,q_85,enc_avif,quality_auto/battery%20cell%20logo_edited.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>site audit — elektrischvarenzonderladen.nl · solutions lab</title>
+  <meta name="description" content="A candid audit of elektrischvarenzonderladen.nl — what's working, what's leaking leads, and what we'd rebuild. By Solutions Lab.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --sl-black: #0B0B0B; --sl-white: #F5F5F5; --sl-yellow: #FFD500; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--sl-black); color: var(--sl-white);
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-feature-settings: "ss01";
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+    ::selection { background: var(--sl-yellow); color: var(--sl-black); }
+    .bg { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 500; letter-spacing: -0.03em; line-height: 0.95; }
+    .bg-italic { font-family: 'Bricolage Grotesque', sans-serif; font-style: italic; font-weight: 500; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .yellow { color: var(--sl-yellow); }
+    .bg-yellow { background: var(--sl-yellow); color: var(--sl-black); }
+    .dot::before { content: '●'; color: var(--sl-yellow); margin-right: 0.5em; }
+    .max { max-width: 1500px; margin: 0 auto; padding: 0 20px; }
+    @media (min-width: 768px) { .max { padding: 0 40px; } }
+    .hr { height: 1px; background: rgba(245,245,245,0.15); border: 0; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 28px; font-size: 13px; text-transform: uppercase;
+      letter-spacing: 0.08em; font-weight: 500; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-yellow { background: var(--sl-yellow); color: var(--sl-black); }
+    .btn-yellow:hover { background: var(--sl-white); }
+    .btn-ghost { border: 1px solid rgba(245,245,245,0.3); color: var(--sl-white); }
+    .btn-ghost:hover { background: var(--sl-white); color: var(--sl-black); border-color: var(--sl-white); }
+    .card { border: 1px solid rgba(245,245,245,0.15); padding: 28px; }
+    .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(245,245,245,0.55); }
+    .mega { font-size: clamp(3rem, 10vw, 9rem); }
+    .huge { font-size: clamp(2.25rem, 5.5vw, 4.5rem); }
+    .big { font-size: clamp(1.75rem, 3.5vw, 3rem); }
+    .grid12 { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; }
+    .col-span-6 { grid-column: span 6; }
+    .col-span-4 { grid-column: span 4; }
+    .col-span-8 { grid-column: span 8; }
+    .col-span-12 { grid-column: span 12; }
+    @media (max-width: 768px) {
+      .grid12 { grid-template-columns: 1fr; gap: 20px; }
+      .col-span-4, .col-span-6, .col-span-8 { grid-column: span 1; }
+    }
+    .score-arc { position: relative; width: 240px; height: 240px; }
+    .score-num { font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 96px; letter-spacing: -0.04em; }
+    .issue-now { background: #1a1a1a; padding: 20px; }
+    .issue-better { background: var(--sl-yellow); color: var(--sl-black); padding: 20px; }
+    .back-home {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 16px; font-size: 11px; text-transform: uppercase;
+      letter-spacing: 0.2em; border: 1px solid rgba(245,245,245,0.3);
+      color: var(--sl-white); text-decoration: none; transition: all 0.2s;
+    }
+    .back-home:hover { background: var(--sl-yellow); color: var(--sl-black); border-color: var(--sl-yellow); }
+    .no-decoration { text-decoration: none; color: inherit; }
+  </style>
+
+</head>
+<body>
+
+<!-- Top bar -->
+<div style="background: var(--sl-yellow); color: var(--sl-black); padding: 10px 0; text-align: center; font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em;">
+  <span class="bg" style="font-weight: 600;">● solutions lab — site audit for elektrischvarenzonderladen.nl</span>
+</div>
+
+<!-- Nav -->
+<header class="max" style="padding-top: 24px; padding-bottom: 24px; display: flex; align-items: center; justify-content: space-between;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <div style="width: 10px; height: 10px; background: var(--sl-yellow);"></div>
+    <span class="bg" style="font-size: 18px;">solutions lab</span>
+  </div>
+  <a href="/" class="back-home">← back to the demo site</a>
+</header>
+
+<hr class="hr">
+
+<!-- HERO -->
+<section class="max" style="padding-top: 60px; padding-bottom: 80px;">
+  <div class="grid12" style="align-items: end;">
+    <div class="col-span-8">
+      <div class="eyebrow dot" style="margin-bottom: 32px;">confidential · for boss boating</div>
+      <h1 class="bg mega">
+        this site is<br>
+        good. <span class="bg-italic yellow">it could</span><br>
+        <span class="bg-italic yellow">convert 3×.</span>
+      </h1>
+      <p style="font-size: 20px; max-width: 640px; margin-top: 40px; color: rgba(245,245,245,0.75); line-height: 1.6;">
+        Elektrischvarenzonderladen.nl has a genuinely great product story — solar sloops that
+        charge themselves. But the site speaks like an engineer, hides all prices, and asks
+        visitors to "look in the menu above" instead of taking the next step. This is what we'd fix.
+      </p>
+    </div>
+    <div class="col-span-4" style="text-align: right;">
+      <div class="mono" style="font-size: 12px; color: rgba(245,245,245,0.5); margin-bottom: 8px;">AUDIT DATE</div>
+      <div class="bg" style="font-size: 28px;">Apr 2026</div>
+      <div class="mono" style="font-size: 12px; color: rgba(245,245,245,0.5); margin-top: 24px;">PREPARED BY</div>
+      <div class="bg" style="font-size: 20px;">loek · solutions lab</div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORECARD -->
+<section style="background: #121212;">
+  <div class="max" style="padding: 80px 20px;">
+    <div class="eyebrow dot" style="margin-bottom: 24px;">the numbers</div>
+    <h2 class="bg huge" style="margin-bottom: 60px;">the <span class="bg-italic yellow">scorecard</span>.</h2>
+
+    <div class="grid12">
+      <!-- Technical score -->
+      <div class="col-span-4 card" style="text-align: center;">
+        <div class="eyebrow">technical</div>
+        <div class="score-num yellow" style="margin: 20px 0 0;">87</div>
+        <div class="mono" style="font-size: 13px; color: rgba(245,245,245,0.55);">out of 100</div>
+        <div style="margin-top: 24px; font-size: 14px; color: rgba(245,245,245,0.75);">
+          Solid foundation — Wix handles the basics well. Two concrete issues to fix (see below).
+        </div>
+      </div>
+
+      <!-- Marketing score -->
+      <div class="col-span-4 card" style="text-align: center;">
+        <div class="eyebrow">marketing &amp; copy</div>
+        <div class="score-num" style="margin: 20px 0 0; color: #ff6b3d;">52</div>
+        <div class="mono" style="font-size: 13px; color: rgba(245,245,245,0.55);">out of 100</div>
+        <div style="margin-top: 24px; font-size: 14px; color: rgba(245,245,245,0.75);">
+          The biggest gap. Great product, weak persuasion. CTAs missing, no social proof,
+          too technical headlines, prices hidden.
+        </div>
+      </div>
+
+      <!-- Conversion score -->
+      <div class="col-span-4 card" style="text-align: center;">
+        <div class="eyebrow">conversion potential</div>
+        <div class="score-num yellow" style="margin: 20px 0 0;">3×</div>
+        <div class="mono" style="font-size: 13px; color: rgba(245,245,245,0.55);">estimated upside</div>
+        <div style="margin-top: 24px; font-size: 14px; color: rgba(245,245,245,0.75);">
+          Fixing CTAs, copy, and adding social proof alone should double or triple
+          qualified inbound enquiries.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL ISSUES -->
+<section class="max" style="padding: 100px 20px;">
+  <div class="grid12" style="align-items: start;">
+    <div class="col-span-4">
+      <div class="eyebrow dot">chapter 01</div>
+      <h2 class="bg huge" style="margin-top: 16px;">technical<br><span class="bg-italic yellow">the easy wins</span>.</h2>
+      <p style="color: rgba(245,245,245,0.7); margin-top: 24px;">
+        These two issues are fixable in an afternoon on the current Wix site — no rebuild needed.
+      </p>
+    </div>
+    <div class="col-span-8">
+      <div class="card" style="margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+          <div class="bg" style="font-size: 28px;">No H1 heading on any page</div>
+          <span class="mono" style="font-size: 11px; background: #ff6b3d; color: black; padding: 4px 10px;">HIGH</span>
+        </div>
+        <p style="color: rgba(245,245,245,0.7);">
+          Every page of the site uses H2 tags as its main heading — no H1 anywhere. This is one of the
+          strongest signals Google uses to understand what a page is about. Without it, search engines
+          have to guess your topic from surrounding content. Fix: set the top heading on each page to H1.
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+          <div class="bg" style="font-size: 28px;">Page title is 76 characters</div>
+          <span class="mono" style="font-size: 11px; background: #aaa; color: black; padding: 4px 10px;">LOW</span>
+        </div>
+        <p style="color: rgba(245,245,245,0.7);">
+          Current title: <em>"Elektrisch varen op zonne-energie. Zorgeloos en zonder opladen het water op."</em>
+          Google truncates at ~60 characters in results, so your tail is getting cut. Shortening to
+          something like <em>"Elektrisch varen op zonne-energie | Elektrisch Varen Zonder Laden"</em> (61 chars)
+          shows in full and includes the brand.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- MARKETING ISSUES -->
+<section class="max" style="padding: 100px 20px;">
+  <div class="grid12" style="align-items: start; margin-bottom: 60px;">
+    <div class="col-span-6">
+      <div class="eyebrow dot">chapter 02</div>
+      <h2 class="bg huge" style="margin-top: 16px;">marketing<br><span class="bg-italic yellow">the big leaks</span>.</h2>
+    </div>
+    <div class="col-span-6">
+      <p style="color: rgba(245,245,245,0.75); font-size: 18px;">
+        Here's what stops visitors from becoming buyers. For each leak we show what the site says
+        today and what it should say instead. The "better" version isn't invented — it comes from
+        your own content, rewritten for the visitor.
+      </p>
+    </div>
+  </div>
+
+  <!-- Issue 1 -->
+  <div style="margin-bottom: 48px;">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 20px;">
+      <span class="bg yellow" style="font-size: 48px;">01</span>
+      <h3 class="bg" style="font-size: 28px;">The headline speaks engineer, not customer.</h3>
+    </div>
+    <div class="grid12">
+      <div class="col-span-6">
+        <div class="mono eyebrow" style="margin-bottom: 10px;">NOW</div>
+        <div class="issue-now">
+          "Elektrisch varen op zonne-energie. Zorgeloos en zonder opladen het water op."
+          <div style="margin-top: 12px; font-size: 13px; color: rgba(245,245,245,0.55);">
+            Long, technical, feature-focused. It describes what the boat *does* instead of what it
+            gives the visitor.
+          </div>
+        </div>
+      </div>
+      <div class="col-span-6">
+        <div class="mono eyebrow" style="margin-bottom: 10px; color: var(--sl-yellow);">BETTER</div>
+        <div class="issue-better">
+          <div class="bg" style="font-size: 28px;">Vaar onbeperkt.<br>Vaar stil.<br>Vaar op de zon.</div>
+          <div style="margin-top: 12px; font-size: 13px;">
+            Three words, an emotional benefit each. Matches the 3-second attention span of a cold
+            visitor and immediately communicates value.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Issue 2 -->
+  <div style="margin-bottom: 48px;">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 20px;">
+      <span class="bg yellow" style="font-size: 48px;">02</span>
+      <h3 class="bg" style="font-size: 28px;">The main CTA is "look in the menu above".</h3>
+    </div>
+    <div class="grid12">
+      <div class="col-span-6">
+        <div class="mono eyebrow" style="margin-bottom: 10px;">NOW</div>
+        <div class="issue-now">
+          "Kijk in het menu boven om te zien welke verschillende mogelijkheden er zijn, of vraag naar informatie via de contactpagina."
+          <div style="margin-top: 12px; font-size: 13px; color: rgba(245,245,245,0.55);">
+            This is the worst CTA a product site can have — it puts the work on the visitor and
+            offers zero urgency or specificity.
+          </div>
+        </div>
+      </div>
+      <div class="col-span-6">
+        <div class="mono eyebrow" style="margin-bottom: 10px; color: var(--sl-yellow);">BETTER</div>
+        <div class="issue-better">
+          <div class="bg" style="font-size: 22px;">Plan uw vrijblijvende proefvaart →</div>
+          <div class="bg" style="font-size: 22px; margin-top: 6px;">Bel +31 622 199 699</div>
+          <div class="bg" style="font-size: 22px; margin-top: 6px;">Ontdek welke boot bij u past →</div>
+          <div style="margin-top: 12px; font-size: 13px;">
+            Three CTAs ordered by commitment. Each one concrete, verb-first, removes friction.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Issue 3 -->
+  <div style="margin-bottom: 48px;">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 20px;">
+      <span class="bg yellow" style="font-size: 48px;">03</span>
+      <h3 class="bg" style="font-size: 28px;">Nine out of ten prices say "op aanvraag".</h3>
+    </div>
+    <div class="grid12">
+      <div class="col-span-6">
+        <div class="mono eyebrow" style="margin-bottom: 10px;">NOW</div>
+        <div class="issue-now">
+          Only the Commodore (€32.500) and Solara (€9.900) show prices. The other 8 boats say "Op aanvraag".
+          <div style="margin-top: 12px; font-size: 13px; color: rgba(245,245,245,0.55);">
+            Hiding prices is common in this category — but it forces visitors into an email exchange
+            before they know if you're in their budget. Many simply leave.
+          </div>
+        </div>
+      </div>
+      <div class="col-span-6">
+        <div class="mono eyebrow" style="margin-bottom: 10px; color: var(--sl-yellow);">BETTER</div>
+        <div class="issue-better">
+          <div class="bg" style="font-size: 22px;">Show "vanaf"-prices for all 10 boats.</div>
+          <div style="margin-top: 12px; font-size: 13px;">
+            Even a starting price anchors the visitor's expectations. Options and configuration
+            conversations happen after — not before — qualifying interest.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Issue 4 -->
+  <div style="margin-bottom: 48px;">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 20px;">
+      <span class="bg yellow" style="font-size: 48px;">04</span>
+      <h3 class="bg" style="font-size: 28px;">Zero social proof — nowhere.</h3>
+    </div>
+    <div class="grid12">
+      <div class="col-span-6">
+        <div class="mono eyebrow" style="margin-bottom: 10px;">NOW</div>
+        <div class="issue-now">
+          No customer testimonials, no reviews, no "aantal tevreden klanten", no certifications, no media mentions, no expert endorsements.
+          <div style="margin-top: 12px; font-size: 13px; color: rgba(245,245,245,0.55);">
+            A visitor considering a €30k+ purchase has no proof anyone else has trusted you with theirs.
+          </div>
+        </div>
+      </div>
+      <div class="col-span-6">
+        <div class="mono eyebrow" style="margin-bottom: 10px; color: var(--sl-yellow);">BETTER</div>
+        <div class="issue-better">
+          <div class="bg" style="font-size: 22px;">Add 3 customer stories with photos.</div>
+          <div style="margin-top: 12px; font-size: 13px;">
+            Real owners, real water, real first names. Add a number ("X sloepen op Nederlands water")
+            and any certifications you hold. This alone moves serious buyers off the fence.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Issue 5 -->
+  <div>
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 20px;">
+      <span class="bg yellow" style="font-size: 48px;">05</span>
+      <h3 class="bg" style="font-size: 28px;">The page has no customer journey.</h3>
+    </div>
+    <div class="grid12">
+      <div class="col-span-6">
+        <div class="mono eyebrow" style="margin-bottom: 10px;">NOW</div>
+        <div class="issue-now">
+          Flow: long header paragraph → product grid → FAQ → footer. Visitors get specifications
+          before they understand the benefit. No trust-building moments. No guided "which boat fits me".
+        </div>
+      </div>
+      <div class="col-span-6">
+        <div class="mono eyebrow" style="margin-bottom: 10px; color: var(--sl-yellow);">BETTER</div>
+        <div class="issue-better">
+          <div class="bg" style="font-size: 20px;">Headline → Benefits → Social proof → Fleet → How it works → FAQ → CTA</div>
+          <div style="margin-top: 12px; font-size: 13px;">
+            A visitor moves from curiosity to trust to action. Each section answers the next question
+            before it's asked. We rebuilt the demo this way — compare side by side.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- TOP 5 PRIORITIES -->
+<section style="background: #121212;">
+  <div class="max" style="padding: 100px 20px;">
+    <div class="eyebrow dot" style="margin-bottom: 24px;">chapter 03</div>
+    <h2 class="bg huge">the <span class="bg-italic yellow">top 5</span><br>to ship first.</h2>
+    <p style="color: rgba(245,245,245,0.75); max-width: 680px; margin-top: 24px; font-size: 18px;">
+      If we did nothing else — these five changes alone should move the needle significantly.
+      Each one is measurable, each one affects a specific funnel step.
+    </p>
+
+    <div style="margin-top: 60px;">
+      ${[
+        { num: '01', title: 'Rewrite the homepage with emotional benefit-first copy', body: 'Lead with the lifestyle (silence, freedom, sustainability) before the specs. The current copy reads like a technical datasheet — not an invitation. This is the single highest-leverage change on the site.' },
+        { num: '02', title: 'Add 5 strong, specific CTAs throughout the site', body: '"Plan proefvaart", "Bel +31 622 199 699", "Download vergelijkingsgids", "Vraag offerte", "Ontdek welke boot past". Each at the right moment in the page. No more "look in the menu".' },
+        { num: '03', title: 'Show transparent "vanaf"-prices on all 10 boats', body: 'Even a starting price, even rounded, even approximate. Visitors self-qualify before reaching out — you get higher-intent leads, fewer tire-kickers. The two boats that already show price are your proof this works.' },
+        { num: '04', title: 'Introduce social proof in three places', body: 'Homepage hero (count of happy customers), boat detail pages (testimonial per boat), and a standalone "verhalen" section. Without proof, the €30k+ investment feels unvalidated.' },
+        { num: '05', title: 'Build a "welke boot past bij mij" selector', body: '10 boats is a lot to compare. A 3-question quiz (group size, budget, vaargebied) reduces overwhelm and guides visitors toward a specific model — then that model\'s page gets a proefvaart CTA.' },
+      ].map(x => `
+        <div class="card" style="margin-bottom: 16px; display: grid; grid-template-columns: 80px 1fr; gap: 28px; align-items: start;">
+          <span class="bg yellow" style="font-size: 48px;">${x.num}</span>
+          <div>
+            <div class="bg" style="font-size: 24px; margin-bottom: 8px;">${x.title}</div>
+            <p style="color: rgba(245,245,245,0.7); margin: 0;">${x.body}</p>
+          </div>
+        </div>`).join('')}
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="max" style="padding: 100px 20px;">
+  <div class="eyebrow dot" style="margin-bottom: 24px;">chapter 04</div>
+  <h2 class="bg huge" style="margin-bottom: 40px;">see the <span class="bg-italic yellow">demo rebuild</span>.</h2>
+  <p style="color: rgba(245,245,245,0.75); max-width: 700px; font-size: 18px; margin-bottom: 40px;">
+    We applied all five priorities and rebuilt the site end-to-end — same content, same photos,
+    new structure and new copy. Scroll through it before booking a call.
+  </p>
+  <div class="grid12">
+    <a href="/" class="col-span-6 no-decoration" style="display: block;">
+      <div style="background: var(--sl-yellow); color: var(--sl-black); padding: 40px; transition: transform 0.3s;"
+           onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 20px;">the rebuild →</div>
+        <div class="bg" style="font-size: 40px;">view the<br><span class="bg-italic">demo site</span></div>
+        <div style="margin-top: 24px; font-size: 14px; opacity: 0.8;">
+          Full rebuild using your photos and content — with everything above applied.
+        </div>
+      </div>
+    </a>
+    <a href="https://www.elektrischvarenzonderladen.nl/" target="_blank" rel="noopener" class="col-span-6 no-decoration">
+      <div class="card" style="padding: 40px; transition: transform 0.3s; height: 100%;"
+           onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div class="eyebrow" style="margin-bottom: 20px;">the original ↗</div>
+        <div class="bg" style="font-size: 40px;">view the<br><span class="bg-italic">live site</span></div>
+        <div style="margin-top: 24px; font-size: 14px; color: rgba(245,245,245,0.7);">
+          The current version, for reference. Opens in a new tab.
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- CTA -->
+<section class="max" style="padding: 120px 20px; text-align: center;">
+  <div class="eyebrow dot" style="margin-bottom: 32px;">let's ship this</div>
+  <h2 class="bg mega">ready to <span class="bg-italic yellow">rebuild</span>?</h2>
+  <p style="font-size: 20px; max-width: 640px; margin: 32px auto 0; color: rgba(245,245,245,0.75); line-height: 1.6;">
+    We're Solutions Lab. We rebuild sites that have a great product hiding behind weak conversion.
+    Three weeks, fixed scope, no retainers. Let's talk.
+  </p>
+  <div style="margin-top: 48px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+    <a href="mailto:loek@solutionslab.nl?subject=Rebuild%20proposal%20for%20elektrischvarenzonderladen.nl" class="btn btn-yellow">
+      email loek@solutionslab.nl
+    </a>
+    <a href="https://solutionslab.nl" target="_blank" rel="noopener" class="btn btn-ghost">
+      solutionslab.nl ↗
+    </a>
+  </div>
+  <div class="mono" style="margin-top: 80px; font-size: 11px; color: rgba(245,245,245,0.4); letter-spacing: 0.1em;">
+    PREPARED FOR BOSS BOATING · APR 2026 · CONFIDENTIAL
+  </div>
+</section>
+
+<!-- Footer -->
+<hr class="hr">
+<footer class="max" style="padding: 40px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <div style="width: 8px; height: 8px; background: var(--sl-yellow);"></div>
+    <span class="bg" style="font-size: 14px;">solutions lab</span>
+    <span class="mono" style="font-size: 11px; color: rgba(245,245,245,0.5);">— websites that convert</span>
+  </div>
+  <a href="/" class="back-home">← back to the demo site</a>
+</footer>
+
+</body>
+</html>

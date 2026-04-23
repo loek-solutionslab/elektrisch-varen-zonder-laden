@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/af5e69_54979cdb1ba34c1b9b07a483176a68f1~mv2.png/v1/fill/w_64,h_64,al_c,q_85,enc_avif,quality_auto/battery%20cell%20logo_edited.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onze sloepen — Elektrisch Varen Zonder Laden</title>
+  <meta name="description" content="10 elektrische sloepen op zonne-energie. Van intieme 6-persoons tochten tot luxe 8+ tenders. Allemaal 100% zelf-opladend.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600&family=Bricolage+Grotesque:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body data-page="boten" class="bg-paper text-ink">
+
+<div id="announcement"></div>
+<div id="site-header"></div>
+
+<main>
+  <section class="max-w-[1500px] mx-auto px-5 md:px-10 pt-10 md:pt-20 pb-12">
+    <div class="grid md:grid-cols-12 gap-10 items-end">
+      <div class="md:col-span-7">
+        <div class="eyebrow mb-6"><span class="sec-num"></span>10 sloepen · nu leverbaar</div>
+        <h1 class="display text-mega">
+          Vind uw<br>
+          <span class="display-italic text-sun">perfecte</span><br>
+          sloep.
+        </h1>
+      </div>
+      <div class="md:col-span-5">
+        <p class="text-lg text-ink/75 leading-relaxed">
+          Van intieme 6-persoons tochten tot ruime familie-uitstapjes. Elke boot wordt volledig uitgerust
+          met beloopbare zonnepanelen, een krachtig accupakket, en de elektromotor die bij u past.
+          Kies op formaat, op vaargebied, of op gevoel.
+        </p>
+        <div class="mt-6 flex gap-3 flex-wrap">
+          <a href="/contact/#proefvaart" class="btn-primary">Plan een proefvaart</a>
+          <a href="/contact/" class="btn-ghost">Vraag vergelijkingsgids →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter strip -->
+  <section class="max-w-[1500px] mx-auto px-5 md:px-10 py-6 border-y hairline">
+    <div class="flex flex-wrap items-center gap-6 text-xs uppercase tracking-widest text-ink/55">
+      <span class="font-medium text-ink">Alle (10)</span>
+      <span>●</span>
+      <span>6–7 personen</span>
+      <span>●</span>
+      <span>8+ personen</span>
+      <span>●</span>
+      <span>Tenders</span>
+      <span>●</span>
+      <span>Aluminium</span>
+      <span class="ml-auto hidden md:inline">Scroll ↓</span>
+    </div>
+  </section>
+
+  <!-- FLEET GRID -->
+  <section class="max-w-[1500px] mx-auto px-5 md:px-10 py-16 md:py-20">
+    <div id="fleet" class="grid md:grid-cols-2 gap-x-10 gap-y-20"></div>
+    <script type="module">
+      import { BOATS } from '/src/lib/constants.js';
+      const imgs = {
+        commodore555tender: 'https://static.wixstatic.com/media/af5e69_a0f7c15ae4ac4bd9895df2ee894c069c~mv2.jpg/v1/crop/x_123,y_0,w_3642,h_5184/fill/w_900,h_1200,al_c,q_85,enc_avif,quality_auto/DSC04776_JPG.jpg',
+        qwests580: 'https://static.wixstatic.com/media/c18c50_d8a4dbf68b234b44a53800e9639ca2b8~mv2.png/v1/fill/w_900,h_700,al_c,q_85,enc_avif,quality_auto/QWEST%20S580.png',
+        coastliner620: 'https://static.wixstatic.com/media/c18c50_5da678cab63b4ead81eec893ea650f2a~mv2.png/v1/fill/w_900,h_700,al_c,q_85,enc_avif,quality_auto/Coastliner%20620.png',
+        corsiva570: 'https://static.wixstatic.com/media/c18c50_ff39d2960a264302a0f9f5d891858b2a~mv2.png/v1/fill/w_900,h_700,al_c,q_85,enc_avif,quality_auto/Corsiva%20570.png',
+        rinovatio570: 'https://static.wixstatic.com/media/c18c50_3bfb1c967ce649d68cbdc9ed66214bac~mv2.png/v1/fill/w_900,h_700,al_c,q_85,enc_avif,quality_auto/Rinovatio%20570.png',
+        aqua630tender: 'https://static.wixstatic.com/media/c18c50_d226383e92134e0b8e531ffd55cd585c~mv2.jpg/v1/fill/w_900,h_700,al_c,q_80,enc_avif,quality_auto/Aqua%20630%20Tender.jpg',
+        silver655tender: 'https://static.wixstatic.com/media/c18c50_76c7fa102ac2444ebb8955021eaa5901~mv2.jpg/v1/fill/w_900,h_700,al_c,q_80,enc_avif,quality_auto/Silver%20655%20Tender.jpg',
+        aquat700tender: 'https://static.wixstatic.com/media/c18c50_6be9ce5c59604ea1856afbeab55f61f3~mv2.jpg/v1/fill/w_900,h_700,al_c,q_80,enc_avif,quality_auto/Aqua%20T700%20Tender.jpg',
+        dock650steel: 'https://static.wixstatic.com/media/c18c50_a4f61adb8cfa4a0690692084f966237f~mv2.jpg/v1/fill/w_900,h_700,al_c,q_80,enc_avif,quality_auto/DOCK%20650%20Steel.jpg',
+        solara450: 'https://static.wixstatic.com/media/c18c50_95a64f85b8aa47329f606352d2fd0e59~mv2.jpg/v1/fill/w_900,h_700,al_c,q_80,enc_avif,quality_auto/Solara%20450.jpg',
+      };
+      const badges = { commodore555tender: 'Meest gekozen', solara450: 'Instapper', aquat700tender: 'Nieuwste ontwerp', dock650steel: '1000 Wp — topvermogen' };
+      document.getElementById('fleet').innerHTML = BOATS.map((b, i) => `
+        <a href="${b.href}" class="group block">
+          <div class="relative aspect-[5/4] overflow-hidden bg-paper-warm">
+            ${badges[b.slug] ? `<div class="absolute top-4 left-4 z-10 bg-ink text-paper px-3 py-1 text-[10px] uppercase tracking-widest"><span class="text-sun">●</span> ${badges[b.slug]}</div>`: ''}
+            <div class="absolute top-4 right-4 z-10 text-[10px] uppercase tracking-widest text-ink/50">No. ${String(i+1).padStart(2,'0')}</div>
+            <img src="${imgs[b.slug]}" alt="${b.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+          </div>
+          <div class="mt-6 flex items-start justify-between gap-4">
+            <div class="flex-1">
+              <h2 class="display text-3xl md:text-4xl group-hover:text-sun transition-colors">${b.name}</h2>
+              <div class="mt-2 flex flex-wrap gap-4 text-sm text-ink/60">
+                <span>${b.lengthCm} cm</span><span>·</span><span>${b.persons} personen</span><span>·</span><span>${b.kwh}</span><span>·</span><span>${b.wp}</span>
+              </div>
+            </div>
+            <div class="text-right shrink-0">
+              <div class="text-[10px] uppercase tracking-widest text-ink/50">vanaf</div>
+              <div class="kpi-num text-2xl">${b.priceFrom}</div>
+            </div>
+          </div>
+        </a>`).join('');
+    </script>
+  </section>
+
+  <!-- Need help choosing -->
+  <section class="bg-ink text-paper">
+    <div class="max-w-[1500px] mx-auto px-5 md:px-10 py-20 md:py-28 grid md:grid-cols-12 gap-10 items-center">
+      <div class="md:col-span-7">
+        <div class="eyebrow text-paper/50 mb-4"><span class="sec-num"></span>Twijfel u welke past?</div>
+        <h2 class="display text-huge">Bel, mail of<br>kom <span class="display-italic text-sun">gewoon langs</span>.</h2>
+        <p class="mt-6 text-paper/70 text-lg max-w-xl">
+          Meer dan een kwart van onze klanten kiest anders na een bezoek. Zien, voelen, proefvaren — dan weet u het.
+          Hoogkarspel ligt op een half uur van Amsterdam.
+        </p>
+      </div>
+      <div class="md:col-span-5 flex flex-col gap-3">
+        <a href="tel:+31622199699" class="btn-sun !justify-start !text-left">Bel +31 622 199 699</a>
+        <a href="mailto:info@bossboating.nl" class="btn-ghost border-paper/30 text-paper hover:bg-paper hover:text-ink !justify-start">Mail info@bossboating.nl</a>
+        <a href="/contact/#proefvaart" class="btn-ghost border-paper/30 text-paper hover:bg-paper hover:text-ink !justify-start">Plan een proefvaart</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
